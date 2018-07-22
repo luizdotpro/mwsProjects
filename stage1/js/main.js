@@ -80,7 +80,13 @@ window.initMap = () => {
     center: loc,
     scrollwheel: false
   });
-  updateRestaurants();
+    updateRestaurants();
+    
+  let setTitle = () => {
+    const iFrameGoogleMaps = document.querySelector('#map iframe');
+    iFrameGoogleMaps.setAttribute('title', 'Google Maps overview of restaurants');
+  }
+  self.map.addListener('tilesloaded', setTitle);
 }
 
 /**
@@ -137,31 +143,45 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
  */
 createRestaurantHTML = (restaurant) => {
   const li = document.createElement('li');
+  li.className = 'restaurantCard';
 
   const image = document.createElement('img');
-  image.className = 'restaurant-img';
+  image.className = 'img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  image.setAttribute('alt', restaurant.aditional_text);
   li.append(image);
 
-  const name = document.createElement('h1');
+  const divCardPrimary = document.createElement('div');
+  divCardPrimary.className = 'card';
+  const name = document.createElement('h2');
+  name.className = 'cardTitle';
   name.innerHTML = restaurant.name;
   li.append(name);
 
   const neighborhood = document.createElement('p');
   neighborhood.innerHTML = restaurant.neighborhood;
-  li.append(neighborhood);
+ divCardPrimary.append(neighborhood);
+  li.append(divCardPrimary);
 
-  const address = document.createElement('p');
+  const divCardSecondary = document.createElement('div');
+  divCardSecondary.className = 'cardSecondary';
+  const address = document.createElement('address');
+  address.className = 'cardSecondaryContent';
   address.innerHTML = restaurant.address;
-  li.append(address);
+  divCardSecondary.append(address);
+  li.append(divCardSecondary);
 
+  const divCardActions = document.createElement('div');
+  divCardActions.className = 'cardActions';
   const more = document.createElement('a');
+  more.className = 'cardActionsLink';
   more.innerHTML = 'View Details';
   more.href = DBHelper.urlForRestaurant(restaurant);
-  li.append(more)
-
+  divCardActions.append(more);
+  li.append(divCardActions);
   return li
 }
+
 
 /**
  * Add markers for current restaurants to the map.

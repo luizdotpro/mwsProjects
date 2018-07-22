@@ -49,15 +49,18 @@ fetchRestaurantFromURL = (callback) => {
  * Create restaurant HTML and add it to the webpage
  */
 fillRestaurantHTML = (restaurant = self.restaurant) => {
-  const name = document.getElementById('restaurant-name');
+  const name = document.getElementById('restaurantName');
   name.innerHTML = restaurant.name;
+  name.tabIndex = '0';
 
-  const address = document.getElementById('restaurant-address');
+  const address = document.getElementById('address');
   address.innerHTML = restaurant.address;
 
-  const image = document.getElementById('restaurant-img');
-  image.className = 'restaurant-img'
+  const image = document.getElementById('img');
+  image.className = 'img'
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  image.alt = restaurant.aditional_text;
+  image.tabIndex = '0';
 
   const cuisine = document.getElementById('restaurant-cuisine');
   cuisine.innerHTML = restaurant.cuisine_type;
@@ -74,9 +77,11 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
  * Create restaurant operating hours HTML table and add it to the webpage.
  */
 fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => {
-  const hours = document.getElementById('restaurant-hours');
+  const hours = document.getElementById('restaurantTime');
   for (let key in operatingHours) {
     const row = document.createElement('tr');
+    row.className = 'restaurantTableContent';
+    row.tabIndex = '0';
 
     const day = document.createElement('td');
     day.innerHTML = key;
@@ -95,7 +100,8 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
  */
 fillReviewsHTML = (reviews = self.restaurant.reviews) => {
   const container = document.getElementById('reviews-container');
-  const title = document.createElement('h2');
+  const title = document.createElement('h3');
+  title.className = 'reviewsTitle';
   title.innerHTML = 'Reviews';
   container.appendChild(title);
 
@@ -115,7 +121,8 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
 /**
  * Create review HTML and add it to the webpage.
  */
-createReviewHTML = (review) => {
+createReviewHTML = (review) => { 
+    
   const li = document.createElement('li');
   const name = document.createElement('p');
   name.innerHTML = review.name;
@@ -133,6 +140,7 @@ createReviewHTML = (review) => {
   comments.innerHTML = review.comments;
   li.appendChild(comments);
 
+
   return li;
 }
 
@@ -142,7 +150,9 @@ createReviewHTML = (review) => {
 fillBreadcrumb = (restaurant=self.restaurant) => {
   const breadcrumb = document.getElementById('breadcrumb');
   const li = document.createElement('li');
+  li.className = 'breadcrumb';
   li.innerHTML = restaurant.name;
+  li.setAttribute('aria-current', 'page');
   breadcrumb.appendChild(li);
 }
 
