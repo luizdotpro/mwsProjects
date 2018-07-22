@@ -4,7 +4,7 @@
 <head>
         <meta charset="UTF-8">
     <meta name="author" content="Luiz Carneiro">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Stage 1 of Udacity Mobile Web Specialist Restaurant
     Project">
   <!-- Normalize.css for better cross-browser consistency -->
@@ -55,7 +55,7 @@
     </section>
     <!-- Beginning map -->
          <section id="map-container" class="restaurantDetailMap">
-          <div id="map" class="google-maps" role="application" aria-label="Google
+          <div id="map" class="google-maps-enlarged" role="application" aria-label="Google
               Maps review of restaurants" aria-hidden="true"></div>
         </section>
       </div>
@@ -64,7 +64,7 @@
     <!-- end restaurant -->
     <!-- Beginning reviews -->
     <section id="reviews-container">
-      <ul id="reviews-list" class="reviewsCards"></ul>
+      <ul id="reviews-list" class="reviewCards"></ul>
     </section>
     <!-- End reviews -->
   </main>
@@ -72,7 +72,8 @@
 
   <!-- Beginning footer -->
   <footer id="footer" class='footer'>
-    Copyright (c) 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
+      <p class="footerContent">Copyright © 2017 <a class="footerLink"
+                                                    href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.</p>
   </footer>
   <!-- End footer -->
 

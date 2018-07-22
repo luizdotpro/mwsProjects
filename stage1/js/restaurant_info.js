@@ -121,25 +121,42 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
 /**
  * Create review HTML and add it to the webpage.
  */
-createReviewHTML = (review) => { 
-    
+createReviewHTML = (review) => {
   const li = document.createElement('li');
-  const name = document.createElement('p');
+  li.className = 'reviewCard';
+
+  // Create a div with class card-primary that contains h2, h3.
+  const divCardPrimary = document.createElement('div');
+  divCardPrimary.className = 'card';
+  // Restaurant name.
+  const name = document.createElement('h2');
+  name.className = 'cardTitle';
   name.innerHTML = review.name;
-  li.appendChild(name);
-
-  const date = document.createElement('p');
+  divCardPrimary.appendChild(name);
+  // Review date.
+  const date = document.createElement('h3');
+  date.className = 'cardSubtitle';
   date.innerHTML = review.date;
-  li.appendChild(date);
+  divCardPrimary.appendChild(date);
+  li.appendChild(divCardPrimary);
 
+  const divCardActions = document.createElement('div');
+  divCardActions.className = 'reviewCardRating';
   const rating = document.createElement('p');
+  rating.className = 'reviewCardRatingContent';
   rating.innerHTML = `Rating: ${review.rating}`;
-  li.appendChild(rating);
+  divCardActions.append(rating);
+  li.appendChild(divCardActions);
 
+  // Create a div with class card-secondary that contains further content.
+  const divCardSecondary = document.createElement('div');
+  divCardSecondary.className = 'cardSecondary';
+  // Review text.
   const comments = document.createElement('p');
+  comments.className = 'cardContent';
   comments.innerHTML = review.comments;
-  li.appendChild(comments);
-
+  divCardSecondary.appendChild(comments);
+  li.appendChild(divCardSecondary);
 
   return li;
 }

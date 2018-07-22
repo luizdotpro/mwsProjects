@@ -56,7 +56,7 @@ button {
 
 .google-maps {
   width: 100%;
-  height: 60vh;
+  height: 45vh;
 }
 
 .restaurantsFilter {
@@ -66,8 +66,7 @@ button {
   justify-content: space-evenly;
   align-items: center;
   background-color: #006e84; 
-}
-
+} 
 .restaurantsFilter select {
   width: calc(50% - 1em);
   height: 1.75rem;
@@ -106,10 +105,6 @@ button {
   font-weight: 500;
 }
 
-.cardContent {
-  font-size: 0.88rem;
-  line-height: 1.1rem;
-}
 
 .cardActions {
   min-width: 48px;
@@ -136,6 +131,20 @@ button {
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
+  background-color: #006e84;
+}
+
+.cardSecondary {
+  padding: 0 1rem 8px 1rem;
+}
+
+.cardSecondaryContent {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+  letter-spacing: 0.01786em;
+  font-style: normal;
+  color: rgba(0, 0, 0, 0.54);
 }
 
 .breadcrumb {
@@ -146,7 +155,7 @@ button {
 
 .breadcrumb + .breadcrumb:before {
   padding: 1px;
-  content: '>';
+  content: ' > ';
 }
 
 .linkBreadcrumb {
@@ -162,7 +171,6 @@ button {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  border-bottom: 1px solid #000;
 }
 
 .restaurantDetailMap {
@@ -171,9 +179,9 @@ button {
   flex: 1;
 }
 
-.google-maps {
+.google-maps-enlarged {
   width: 100%;
-  height: 40vh;
+  height: 100%;
 }
 
 .restaurantDetailTitle {
@@ -199,7 +207,7 @@ button {
   display: flex;
   flex-direction: row;
   align-items: center;
-  background-color: #3f51b5;
+  background-color: #006e84;
 }
 
 .cardSecondary {
@@ -257,6 +265,12 @@ button {
   display: flex;
   flex-direction: column;
   list-style-type: none;
+    border-radius: 2px;
+  box-shadow:
+    0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+	background-color: rgb(255, 255, 255);
 }
 
 .reviewCardRating {
@@ -264,13 +278,14 @@ button {
   display: flex;
   flex-direction: row;
   align-items: center;
-  background-color: #788dba;
+  background-color: #006e84;
 }
 
 .reviewCardRatingContent {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
   text-transform: uppercase;
+  color: #fff;
 }
 
 .footer {
@@ -281,6 +296,17 @@ button {
   justify-content: center;
   align-items: center;
   text-transform: uppercase;
+}
+
+.footerContent {
+  padding: 1rem;
+  font-size: 0.75rem;
+  color: #000;
+}
+
+.footerLink {
+  text-decoration: none;
+  color: #000;
 }
 
 @media screen and (max-width: 29.9em) {
@@ -298,17 +324,12 @@ button {
     width: 90%;
     width: calc(100% - 1em);
   }
-  .restaurantDetails {
-    flex-direction: column;
-  }
   .restaurantCard {
     width: 100%;
-    order: 2;
   }
   .restaurantDetailMap {
     width: 100%;
     height: 30vh;
-    order: 1;
   }
 }
 
@@ -322,17 +343,12 @@ button {
   .restaurantCard {
     margin: 1rem;
   }
-  .restaurantDetails {
-    flex-direction: column;
-  }
   .restaurantCard {
     width: 100%;
-    order: 2;
   }
   .restaurantDetailMap {
     width: 100%;
     height: 35vh;
-    order: 1;
   }
 }
 
