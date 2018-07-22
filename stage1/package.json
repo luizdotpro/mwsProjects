@@ -1,0 +1,11 @@
+{
+  "name": "stage1",
+  "version": "1.0.0",
+  "description": "Stage 1 - restaurant projetc - mobile web specialist nanodegree",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Luiz Carneiro",
+  "license": "ISC"
+}
