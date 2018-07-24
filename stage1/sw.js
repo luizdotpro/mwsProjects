@@ -1,6 +1,6 @@
 self.addEventListener('install', event => {
   event.waitUntil(
-    caches.open('mws-restaurant-stage-1').then(cache => {
+    caches.open('stage1').then(cache => {
       return cache.addAll([
         '/',
         'index.html',
