@@ -3,6 +3,8 @@ self.addEventListener('install', event => {
     caches.open('mws-restaurant-stage-1').then(cache => {
       return cache.addAll([
         '/',
+        'index.html',
+        'restaurant.html',
         '/css/styles.css',
         '/js/dbhelper.js',
         '/js/main.js',

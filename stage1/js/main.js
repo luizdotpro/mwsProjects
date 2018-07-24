@@ -152,7 +152,7 @@ createRestaurantHTML = (restaurant) => {
   li.append(image);
 
   const divCardPrimary = document.createElement('div');
-  divCardPrimary.className = 'card';
+  divCardPrimary.className = 'cardTown';
   const name = document.createElement('h2');
   name.className = 'cardTitle';
   name.innerHTML = restaurant.name;
