@@ -1,8 +1,8 @@
 {
-  "name": "Restaurant-Reviews",
+  "name": "stage2",
   "private": true,
   "version": "0.0.0",
-  "description": "a Sails application",
+  "description": "Stage 2 - restaurant projecz - mobile web specialist nanodegree",
   "keywords": [],
   "dependencies": {
     "include-all": "^1.0.0",
@@ -17,9 +17,8 @@
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/brandy/Restaurant-Reviews.git"
+    "url": ""
   },
-  "author": "Brandy Lee Camacho",
-  "linkedIn": "https://www.linkedin.com/in/brandycamacho/",
-  "email": "brandy@udacity.com"
+  "author": "Luiz Carneiro",
+  "email": "mail@luiz.pro"
 }
