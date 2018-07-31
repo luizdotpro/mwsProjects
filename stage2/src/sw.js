@@ -5,7 +5,7 @@ self.addEventListener('install', event => {
         '/',
         'index.html',
         'restaurant.html',
-        '/css/styles.css',
+        '/css/styles.min.css',
         '/js/dbhelper.js',
         '/js/main.js',
         '/data/restaurants.json',
