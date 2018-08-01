@@ -1,21 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang='en'>
 
 <head>
-        <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name="author" content="Luiz Carneiro">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Stage 1 of Udacity Mobile Web Specialist Restaurant
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Stage 2 of Udacity Mobile Web Specialist Restaurant
     Project">
-  <!-- Normalize.css for better cross-browser consistency -->
-  <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
-  <!-- Main CSS file -->
-  <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <meta name="theme-color" content="#006e84">
+  <link rel='manifest' href='manifest.json'>
+  <link rel="stylesheet" href="css/styles.min.css">
+  <script async src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/10.4.1/lazyload.min.js"></script>
   <title>Restaurant Info</title>
 </head>
 
 <body class="inside">
-  <!-- Beginning header -->
+  <!-- header -->
   <header>
     <!-- Beginning nav -->
      <nav class="navBar">
@@ -68,24 +69,15 @@
     </section>
     <!-- End reviews -->
   </main>
-  <!-- End main -->
 
-  <!-- Beginning footer -->
   <footer id="footer" class='footer'>
       <p class="footerContent">Copyright © 2017 <a class="footerLink"
                                                     href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.</p>
   </footer>
-  <!-- End footer -->
 
-  <!-- Beginning scripts -->
-  <!-- Database helpers -->
-  <script type="text/javascript" src="js/dbhelper.js"></script>
-  <!-- Main javascript file -->
-  <script type="text/javascript" src="js/restaurant_info.js"></script>
-  <!-- Google Maps -->
+  <script type="application/javascript" charset="utf-8" src="js/dbhelper.js"></script>
+  <script type="application/javascript" charset="utf-8" src="js/main.js"></script>
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCM5nwNguY74clhHcivsVH7jQGuqzvPJ30&libraries=places&callback=initMap"></script>
-  <!-- End scripts -->
-
 </body>
 
 </html>
