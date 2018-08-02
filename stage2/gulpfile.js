@@ -59,9 +59,9 @@ gulp.task('images-resize', function () {
         rename: { suffix: '_w_800' },
       }],
     }, {
-      quality: 60,
+      quality: 30,
       progressive: true,
-      compressionLevel: 8,
+      compressionLevel: 12,
       withMetadata: false,
     }))
     .pipe(gulp.dest('dist/img'))

@@ -59,11 +59,12 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   const image = document.getElementById('img');
   image.className = 'img'
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
-  image.alt = restaurant.aditional_text;
+  image.alt = restaurant.name + ' Restaurant Image';
   image.tabIndex = '0';
 
   const cuisine = document.getElementById('restaurant-cuisine');
   cuisine.innerHTML = restaurant.cuisine_type;
+  new LazyLoad();
 
   // fill operating hours
   if (restaurant.operating_hours) {
