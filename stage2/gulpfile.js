@@ -38,6 +38,12 @@ gulp.task('manifest-copy', () =>
   .pipe(browserSync.stream())
 );
 
+gulp.task('icons-copy', () =>
+    gulp.src('src/img/*.png')
+    .pipe(gulp.dest('dist/img'))
+  .pipe(browserSync.stream())
+);
+
 gulp.task('images-webp', () =>
   gulp.src('src/img/*.jpg')
   .pipe(webp())
@@ -144,5 +150,5 @@ gulp.task('serve',['html-copy'],()=>{
                 'dist/fonts/*']).on('change',browserSync.reload);
 });
 
-gulp.task('default',['msg','html-copy','sw-copy','manifest-copy','images-webp','images-resize','css-minify','js-babel-test','serve']);
+gulp.task('default',['msg','html-copy','sw-copy','manifest-copy','images-webp','images-resize','icons-copy','css-minify','js-babel-test','serve']);
 

@@ -1,7 +1,11 @@
-self.addEventListener('install', event => {
+const cacheTitle = 'stage2';
+
+self.addEventListener('install', function(event) {
   event.waitUntil(
-    caches.open('stage2').then(cache => {
-      return cache.addAll([
+      caches
+      .open(cacheTitle)
+      .then(function(cache) {
+        return cache.addAll([
         '/',
         'index.html',
         'restaurant.html',
@@ -19,15 +23,38 @@ self.addEventListener('install', event => {
         '/img/8_w_500.webp',
         '/img/9_w_500.webp',
         '/img/10_w_500.webp',
-      ]);
-    })
+      ])
+      })
+  );
+});
+
+self.addEventListener('activate', function(event) {
+
+  event.waitUntil(
+    caches.keys()
+      .then(function (keyList) {
+        return Promise.all(keyList.map((key) => {
+          if (key !== cacheTitle) {
+            console.log('Remove old cache', key);
+            return caches.delete(key);
+          }
+        }))
+      })
   )
 });
 
-self.addEventListener('fetch', function(event) {
+function returnFromCache(event) {
   event.respondWith(
-    caches.match(event.request).then(function(response) {
-      return response || fetch(event.request);
-    })
+    caches.match(event.request, { ignoreSearch: true }) 
+      .then(function(response) {
+        if (response) {
+          return response;
+        }
+        return fetch(event.request);
+      })
   );
+}
+
+self.addEventListener('fetch', function(event) {
+  returnFromCache(event);
 });
