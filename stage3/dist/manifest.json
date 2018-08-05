@@ -1,0 +1,22 @@
+{
+  "short_name": "MWSrestaurants",
+  "name": "stage2",
+  "icons": [
+    {
+      "src": "img/appIconSmall.png",
+      "type": "image/png",
+      "sizes": "256x256"
+    },
+    {
+      "src": "img/appIcon.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#006e84",
+  "orientation": "portrait",
+  "theme_color": "#006e84"
+}
