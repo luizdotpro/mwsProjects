@@ -632,6 +632,59 @@ button {
   color: #000;
 }
 
+#reviews-container > h3 {
+    text-align: center;
+}
+
+#restaurant-review-form {
+  margin-bottom: 30px;
+}
+
+#review-form {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+#review-form input {
+  margin-bottom: 10px;
+  padding: 8px;
+  font-size: 14px;
+  background-color: #fff;
+  border: 1px solid black;
+}
+
+#review-form select {
+  margin-bottom: 10px;
+  padding: 8px;
+  font-size: 14px;
+  background-color: #fff;
+  border: 1px solid black;
+}
+
+#review-form textarea {
+  margin-bottom: 10px;
+  padding: 8px;
+  font-size: 16px;
+  background-color: #fff;
+  border: 1px solid black;
+}
+
+#review-form input[type="submit"] {
+  height: 35px;
+  font-size: 14px;
+  background-color: #185a8e;
+  color: #fff;
+  border: 0;
+}
+
+.restaurant-fav-icon {
+  height: 32px;
+  width: 32px;
+  margin-top: 3px;
+  margin-right: 8px;
+}
+
 @media screen and (max-width: 29.9em) {
   .wrapper {
     max-width: 29.9rem;

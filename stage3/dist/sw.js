@@ -1,4 +1,4 @@
-const cacheTitle = 'stage2';
+const cacheTitle = 'stage3';
 
 self.addEventListener('install', function(event) {
   event.waitUntil(
@@ -23,6 +23,10 @@ self.addEventListener('install', function(event) {
         '/img/8_w_500.webp',
         '/img/9_w_500.webp',
         '/img/10_w_500.webp',
+        '/img/10_w_500.webp',
+        '/img/10_w_500.webp',
+        '/img/ico-fav-o.png',
+        '/img/ico-fav.png',
       ])
       })
   );
