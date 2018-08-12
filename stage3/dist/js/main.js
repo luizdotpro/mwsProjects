@@ -190,10 +190,16 @@ const createRestaurantHTML = (restaurant) => {
     favoriteIconImg.setAttribute("data-src", './img/ico-fav.png');
     favoriteIconImg.className = 'restaurant-fav-icon fav';
     favoriteIconImg.setAttribute("alt", 'The restaurant is marked as favourite');
+    favoriteIconImg.setAttribute("aria-labelledby", 'The restaurant is marked as favourite');
+    favoriteIconImg.setAttribute("title", 'The restaurant is marked as favourite');
+    favoriteIconImg.setAttribute("aria-label", `Click to remove ${restaurant.name} from favourite`);
   } else {
     favoriteIconImg.setAttribute("data-src", './img/ico-fav-o.png');
     favoriteIconImg.className = 'restaurant-fav-icon fav-not';
     favoriteIconImg.setAttribute("alt", 'The restaurant is not marked as favourite');
+    favoriteIconImg.setAttribute("aria-labelledby", 'The restaurant is not marked as favourite');
+    favoriteIconImg.setAttribute("title", 'The restaurant is not marked as favourite');
+    favoriteIconImg.setAttribute("aria-label", `Click to mark ${restaurant.name} as favourite`);
   }
 
   favoriteIconImg.addEventListener('click', () => {
